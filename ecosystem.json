@@ -30,7 +30,7 @@
       repo : "git@github.com:ahadik/fed-date-vm-demo.git",
       path : "/root/fed-date-vm-demo",
       "pre-deploy-local" : "echo 'This is a local executed command'",
-      "post-deploy" : "npm install pm2 -g && npm install bower -g && npm install gulp -g && npm install --unsafe-perm && gulp build && pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy" : "npm install pm2 -g && npm install bower -g && npm install gulp -g && npm install --unsafe-perm && gulp build && pm2 startOrRestart ecosystem.json --env production -i max"
     }
   }
 }
