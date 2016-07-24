@@ -1,0 +1,36 @@
+{
+  /**
+   * Application configuration section
+   * http://pm2.keymetrics.io/docs/usage/application-declaration/
+   */
+  apps : [
+
+    // First application
+    {
+      name      : "FED Date",
+      script    : "index.js",
+      env: {
+        TEST_VAR: "Hello FED Date"
+      },
+      env_production : {
+        NODE_ENV: "production"
+      }
+    }
+  ],
+
+  /**
+   * Deployment section
+   * http://pm2.keymetrics.io/docs/usage/deployment/
+   */
+  deploy : {
+    production : {
+      user : "root",
+      host : "173.192.106.142",
+      ref  : "origin/master",
+      repo : "git@github.com:ahadik/fed-date-vm-demo.git",
+      path : "/root/fed-date-vm-demo",
+      "pre-deploy-local" : "echo 'This is a local executed command'",
+      "post-deploy" : "npm install && gulp build && pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
+}
