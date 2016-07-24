@@ -7,12 +7,15 @@
     "start": "node index.js",
     "node": "node index.js",
     "test": "npm run gulp test",
-    "postinstall": "npm run install:bower",
-    "install:bower": "npm run bower install",
+    "postinstall": "npm run install:bower:root",
+    "install:bower": "npm run bower install --allow-root",
     "install:bower:root": "./node_modules/.bin/bower install --allow-root",
     "bower": "./node_modules/.bin/bower",
     "gulp": "./node_modules/.bin/gulp"
   },
+  "config": {
+    "unsafe-perm":true
+},
   "repository": {
     "type": "git",
     "url": "git@github.com:ahadik/fed-date-vm-demo.git"
