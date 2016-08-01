@@ -29,17 +29,6 @@
       repo : "git@github.com:ahadik/fed-date-vm-demo.git",
       path : "/root/fed-date-vm-demo",
       "post-deploy" : "npm install pm2 -g && npm install bower -g && npm install gulp -g && npm install --unsafe-perm && gulp build && pm2 startOrRestart ecosystem.json"
-    },
-    dev : {
-      user : "node",
-      host : "212.83.163.1",
-      ref  : "origin/master",
-      repo : "git@github.com:repo.git",
-      path : "/var/www/development",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env dev",
-      env  : {
-        NODE_ENV: "dev"
-      }
     }
   }
 }
